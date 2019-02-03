@@ -16,8 +16,8 @@
 						<input class="visually-hidden" type="submit" value="Найти"> <!--Не понимаю как работает-->
 				</form>
 
-				<a class="bookmarks" href="#">Закладки:</a>
-				<a class="basket" href="#">Корзина:</a>
+				<a class="bookmarks" href="#">Закладки:0</a>
+				<a class="basket" href="#">Корзина:0</a>
 				<a class="button-order" href="#">Оформить заказ</a>
 			</div>
 			<div class="main-header-bottom">
@@ -45,8 +45,32 @@
 		</header>
 
 		<main>
-
-	<!-- Здесь будет остальной MAIN-->
+			<section class="categories">
+				<h2 class="visually-hidden">Преимущества</h2>
+					<ul class="categories-list">
+						<li class="categories-item-materials">
+							<h3>Материалы</h3>
+							<a href="#">Hа любой вкус</a>
+						</li>
+						<li class="categories-item-instruments">
+							<h3>Инструмент</h3>
+							<a href="#">На все случаи</a>
+						</li>
+						<li class="categories-item-equipment">
+							<h3>Техника</h3>
+							<a href="#">Для стройки</a>
+						</li>
+						<li class="categories-item-sale">
+							<h3>Скидки 50%</h3>
+							<a href="#">На 350 товаров</a>
+						</li>
+						<li class="categories-item-delivery">
+							<h3>Доставка</h3>
+							<a href="#">Бесплатно</a>
+						</li>
+					</ul>
+			</section>
+<!--Слайдер нужно размечать?-->
 
 			<section class="company-description">
 				<h2 class="company-description-title">"Компания техномарт"</h2>
@@ -64,7 +88,7 @@
 			<section class="contacts">
 				<h2 class="contacts-title">Контакты</h2>
 				<p>Вы можете забрать товар сами заехав в наш офис:</p>
-				<img src="img/map.jpg" alt="Адрес компании: г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19" width="300" height="158">
+				<a href="#"><img src="img/map.jpg" alt="Адрес компании: г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19" width="300" height="158"></a>
 				<a class="button" href="contacts.html">Заблудились! Напишите нам!</a>
 			</section>
 		</main>
@@ -120,8 +144,8 @@
 							<textarea name="text" placeholder="В свободной форме"></textarea>
 						</label>
 					<button class="button-red" type="submit">Отправить</button>
-					<button class="modal-close" type="button">Закрыть</button>
 				</form>
+					<button class="modal-close" type="button">Закрыть</button>
 			</section>
 
 			<section class="modal modal-map">
