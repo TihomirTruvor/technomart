@@ -2,14 +2,19 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<link href="css/style.css" rel="stylesheet">
 		<title>Перфораторы. Интернет-магазин Техномарт</title>
+		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="main-header-top">
 				<a class="main-header-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="111" height="18">Техномарт</a>
-				<a class="search" href="#">Поиск:</a> <!--Здесь будет форма-->
+				<form action="https://echo.htmlacademy.ru" method="get">
+					<label>Поиск:<!--???-->
+						<input class="header-top-search" type="search">
+					</label>
+						<input class="visually-hidden" type="submit" value="Найти"> <!--Не понимаю как работает-->
+				</form>
 				<a class="bookmarks" href="#">Закладки:</a>
 				<a class="full-basket" href="#">Корзина:10</a>
 				<a class="button-order" href="#">Оформить заказ</a>
@@ -58,29 +63,56 @@
 
 			<h1 class="catalog-title">Перфораторы</h1>
 
-			<section class="filter">
 				<!--Здесь будет 1 часть фильтрации-->
-				<div class="filter-producers">
-					<p>Производители:</p> <!--Я не знаааю как это делать-->
-					<div class="filter-producers-list">
-						<label><input type="checkbox">Bosh</label>
-						<label><input type="checkbox">Интерскол</label>
-						<label><input type="checkbox">Makita</label>
-						<label><input type="checkbox">Dewalt</label>
-						<label><input type="checkbox">Hitachi</label>
-					</div>
-				</div>
-				<div class="filter-power">
-					<p>Питание:</p> <!--И эээто не знаааю как делать-->
-					<label class="filter-power-battery">
-						<input type="radio" name="power">Акумуляторные
-					</label>
-					<label class="filter-power-grid">
-						<input type="radio" name="power">Сетевые
-					</label>
-				</div>
-				<span class="button">Показать</span>
-			</section>
+				<form class="filter" method="get" action="https://echo.htmlacademy.ru">
+					<fieldset>
+						<legend>Производители:</legend>
+						<ul>
+							<li class="filter-option">
+								<label>
+									<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Bosh">Bosh
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Интерскол">Интерскол
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Makita">Makita
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Dewalt">Dewalt
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Hitachi">Hitachi
+								</label>
+							</li>
+						</ul>
+					</fieldset>
+
+					<fieldset>
+						<legend>Питание:</legend>
+						<ul>
+								<li>
+									<label>
+										<input class="visually-hidden filter-input filter-input-radio" type="radio" name="power">Акумуляторные
+									</label>
+								</li>
+								<li>
+									<label>
+										<input class="visually-hidden filter-input filter-input-radio" type="radio" name="power">Сетевые
+									</label>
+								</li>
+						</ul>
+					</fieldset>
+					<button class="filter-button" type="submit">Показать</button>
+				</form>
 
 			<ul class="catalog-list">
 				<li class="catalog-item">
@@ -192,10 +224,10 @@
 			</ul>
 		</main>
 
-		<footer class="main-footer">
+<footer class="main-footer">
 			<div class="main-footer-top">
 				<a class="footer-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="138" height="23">Техномарт</a>
-				<p class="footer-contacts">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19/8 +7 (812)555-05-55</p>
+				<p class="footer-contacts">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19 +7 (812)555-05-55</p>
 				
 				<ul class="footer-navigation">
 					<li><a href="company.html">Компания</a></li>
@@ -212,12 +244,12 @@
 				</ul>
 			</div>
 			<div class="main-footer-bottom">
-				<p class="copyright">© 2010–2019 Компания «Техномарт» Все права защищены</p>
+				<p class="copyright">© 2010–2019 Компания «Техномарт»	Все права защищены</p>
 				<div class="footer-social">
 					<ul>
 						<li><a class="social-icon" href="#">В контакте</a></li>
 						<li><a class="social-icon" href="#">Фейсбук</a></li>
-						<li><a class="social-icon" href="#"Инстаграм</a></li>
+						<li><a class="social-icon" href="#">Инстаграм</a></li>
 					</ul>
 				</div>
 				<div class="footer-feedback">
@@ -232,14 +264,24 @@
 		</footer>
 
 			<section class="modal modal-mail">
-			<!--Здесь будет форма-->
-			<span class="button-red">Отправить</span>
-			<span class="modal-close">Закрыть</span>
+				<form class="mail-form" action="https://echo.htmlacademy.ru" method="post">
+						<label>Ваше имя:
+							<input class="form-username" type="text" name="username" placeholder="Имя Фамилия">
+						</label>
+						<label>Ваш e-mail:
+							<input class="form-user-email" type="text" name="user-email" placeholder="email@example.com">
+						</label>
+						<label>Текст письма:
+							<textarea name="text" placeholder="В свободной форме"></textarea>
+						</label>
+					<button class="button-red" type="submit">Отправить</button>
+					<button class="modal-close" type="button">Закрыть</button>
+				</form>
 			</section>
 
 			<section class="modal modal-map">
-				<!--Здесь будет карта-->
-				<span class="modal-close">Закрыть</span>
+					<img src="img/map-popup.jpg" width="960" height="460" alt="Офис компании по адресу: ул. Большая Конюшенная 19, Санкт-Петербург">
+				<button class="modal-close" type="button">Закрыть</button>
 			</section>
 	</body>
 </html>
