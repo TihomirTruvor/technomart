@@ -3,19 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Интернет-магазин Техномарт</title>
+		<link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i|PT+Sans:400,700" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="main-header-top">
-				<a class="main-header-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="111" height="18">Техномарт</a>
-				<form action="https://echo.htmlacademy.ru" method="get">
-					<label>Поиск:<!--???-->
-						<input class="header-top-search" type="search">
+				<a class="main-header-logo"><img src="img/logo-technomart.svg" alt="Логотип интернет-магазина Техномарт" width="111" height="18"></a>
+				<form action="https://echo.htmlacademy.ru" method="get" class="search">
+					<label>
+						<input type="search" class="header-search" placeholder="Поиск"/>
 					</label>
-						<input class="visually-hidden" type="submit" value="Найти"> <!--Не понимаю как работает-->
 				</form>
-
 				<a class="bookmarks" href="#">Закладки:0</a>
 				<a class="basket" href="#">Корзина:0</a>
 				<a class="button-order" href="#">Оформить заказ</a>
@@ -23,15 +23,17 @@
 			<div class="main-header-bottom">
 				<h1 class="main-title">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
 				<div class="header-contacts">
-					<a class="header-contacts-phone" href="tel:+78125550555">+7 (812)555-05-55</a>
-					<p class="header-contacts-address">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19/8</p>
+					<div class="header-contacts-phone">
+						<a class="contacts-phone-number" href="tel:+78125550555">+7 (812) 555-05-55</a>
+					</div>
+						<a class="header-contacts-address" href="contacts.html">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19/8</a>
 				</div>
 				<div class="user-nav">
 					<a class="user-nav-login" href="#">Войти</a>
 					<a class="user-nav-registration" href="#">Регистрация</a>
 				</div>
 				<nav class="main-navigation">
-					<ul>
+					<ul class="main-navigation-list">
 						<li><a>Главная</a></li>
 						<li><a href="company.html">Компания</a></li>
 						<li><a href="catalog.html">Каталог</a></li>
@@ -95,7 +97,7 @@
 
 <footer class="main-footer">
 			<div class="main-footer-top">
-				<a class="footer-logo"><img src="img/logo-technomart.svg" alt="Техномарт" width="138" height="23">Техномарт</a>
+				<a class="footer-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Логотип-интернет магазина Техномарт" width="138" height="23"></a>
 				<p class="footer-contacts">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19 +7 (812)555-05-55</p>
 				
 				<ul class="footer-navigation">
@@ -115,7 +117,7 @@
 			<div class="main-footer-bottom">
 				<p class="copyright">© 2010–2019 Компания «Техномарт»	Все права защищены</p>
 				<div class="footer-social">
-					<ul>
+					<ul class="footer-social-list">
 						<li><a class="social-icon" href="#">В контакте</a></li>
 						<li><a class="social-icon" href="#">Фейсбук</a></li>
 						<li><a class="social-icon" href="#">Инстаграм</a></li>
