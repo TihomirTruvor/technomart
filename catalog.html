@@ -12,9 +12,8 @@
 			<div class="main-header-top">
 				<a class="main-header-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Логотип интернет-магазина Техномарт" width="111" height="18"></a>
 				<form action="https://echo.htmlacademy.ru" method="get" class="search">
-					<label>
-						<input type="search" class="header-search" placeholder="Поиск"/>
-					</label>
+					<label class="visually-hidden" for="site-search">Поиск по сайту</label>
+					<input type="search" class="header-search" id="site-search" placeholder="Поиск"/>
 					<button type="submit" class="visually-hidden">Найти</button>
 				</form>
 				<a class="bookmarks" href="#">Закладки:0</a>
@@ -228,7 +227,7 @@
 			</ul>
 		</main>
 
-<footer class="main-footer">
+		<footer class="main-footer">
 			<div class="main-footer-top">
 				<a class="footer-logo" href="index.html"><img src="img/logo-technomart.svg" alt="Логотип интернет-магазина Техномарт" width="138" height="23"></a>
 				<p class="footer-contacts">г. Санкт-Петербург, Ул. Б. Конюшенная, Д. 19	+7 (812)555-05-55</p>
@@ -247,7 +246,7 @@
 				</ul>
 			</div>
 			<div class="main-footer-bottom">
-				<p class="copyright">© 2010–2019 Компания «Техномарт»	Все права защищены</p>
+				<p class="copyright">© 2010–2019 Компания «Техномарт» Все права защищены</p>
 				<div class="footer-social">
 					<ul class="footer-social-list">
 						<li><a class="social-icon" href="#">В контакте</a></li>
@@ -266,28 +265,29 @@
 			</div>
 		</footer>
 
-			<section class="modal modal-mail">
-				<form class="mail-form" action="https://echo.htmlacademy.ru" method="post">
-					<label>Ваше имя:
-						<input class="form-username" type="text" name="username" placeholder="Имя Фамилия">
-					</label>
-					<label>Ваш e-mail:
-						<input class="form-user-email" type="text" name="user-email" placeholder="email@example.com">
-					</label>
-					<label>Текст письма:
-						<textarea name="text" placeholder="В свободной форме"></textarea>
-					</label>
-					<div class="button-background">
-						<button class="button-red" type="submit">Отправить</button>
-					</div>
-				</form>
-					<button class="modal-close" type="button">Закрыть</button>
-			</section>
+		<section class="modal modal-mail">
+			
+			<form class="mail-form" action="https://echo.htmlacademy.ru" method="post">
+				<label>Ваше имя:
+					<input class="form-username" type="text" name="username" placeholder="Имя Фамилия">
+				</label>
+				<label>Ваш e-mail:
+					<input class="form-user-email" type="text" name="user-email" placeholder="email@example.com">
+				</label>
+				<label>Текст письма:
+					<textarea name="text" placeholder="В свободной форме"></textarea>
+				</label>
+				<div class="button-background">
+					<button class="button-red" type="submit">Отправить</button>
+				</div>
+			</form>
+			<button class="modal-close" type="button">Закрыть</button>
+		</section>
 
-			<section class="modal modal-map">
-					<img src="img/map-popup.jpg" width="960" height="460" alt="Офис компании по адресу: ул. Большая Конюшенная 19, Санкт-Петербург">
-				<button class="modal-close" type="button">Закрыть</button>
-			</section>
+		<section class="modal modal-map">
+			<img src="img/map-popup.jpg" width="960" height="460" alt="Офис компании по адресу: ул. Большая Конюшенная 19, Санкт-Петербург">
+			<button class="modal-close" type="button">Закрыть</button>
+		</section>
 	</body>
 </html>
 
