@@ -26,6 +26,18 @@ a
 	overflow: hidden;
 }
 
+.main-navigation-list,
+.categories-list,
+.company-description-list,
+.footer-navigation,
+.footer-catalog-navigation,
+.footer-social-list,
+.popular-goods-list,
+.popular-brands-item
+{
+	list-style: none;
+}
+
 .main-header
 {
 	background-color: #f3f7f9;
@@ -80,16 +92,6 @@ a
 	color: #32425c;
 }
 
-.main-navigation-list,
-.categories-list,
-.company-description-list,
-.footer-navigation,
-.footer-catalog-navigation,
-.footer-social-list
-{
-	list-style: none;
-}
-
 .user-nav-login
 {
 	width: 121px;
@@ -121,8 +123,78 @@ a
 	line-height: 17px;
 }
 
+.categories-list h3
+{
+	font-size: 24px;
 
+	line-height: 30px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	color: #ffffff;
+}
 
+.categories-list a
+{
+	font-size: 14px;
+	line-height: 17px;
+	text-transform: uppercase;
+}
+
+.categories-item-materials
+{
+	width: 300px;
+	background-color: #ffbf47;
+}
+
+.categories-item-instruments
+{
+	width: 300px;
+	background-color: #3bbce3;
+}
+
+.categories-item-equipment
+{
+	width: 300px;
+	background-color: #dc91d8;
+}
+
+.categories-item-sale
+{
+	width: 300px;
+	background-color: #8ed78f;
+}
+
+.categories-item-delivery
+{
+	width: 300px;
+	background-color: #ffc047;
+}
+
+.popular-goods-background
+{
+	width: 940px;
+	background-color: #f9f5f0;
+}
+
+.popular-goods-background h2
+{
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	color: #32425c;
+}
+
+.popular-goods-background a
+{
+	background-color: #ee3643;
+	font-size: 14px;
+	line-height: 17px;
+	text-transform: uppercase;
+	color: #ffffff;
+	padding: 14px 55px;
+	border-radius: 3px;
+}
 
 .footer-logo
 {
