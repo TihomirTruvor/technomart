@@ -211,13 +211,13 @@ a
 }
 
 /*Мейн*/
-main
+.main-top
 {
 	max-width: 940px;
 	margin: 0 auto;
 }
-	/*Преимущества*/
 
+	/*Преимущества*/
 .categories-list
 {
 	margin-top: 60px;
@@ -400,15 +400,24 @@ main
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
 	padding-left: 0px;
+	margin-bottom: 20px;
 }
 
-.catalog-item
+.catalog-item a
 {
+	display: flex;
+	flex-direction: column;
 	width: 220px;
+	height: 318px;
 	border: 1px solid #eaeaea;
 }
+
+.catalog-item span
+{
+	align-items: center;
+}
+
 .catalog-item h3
 {
 	font-family: 'PT-Sans', 'Arial', sans-serif;
@@ -432,8 +441,8 @@ main
 
 .new-price
 {
-	/*background-image: url(..img/red-button.svg);
-	background-repeat:no-repeat; Не работает!!!???*/
+	background-image: url(..img/red-button.svg); /*НЕ РАБОТАЕТ!!*/
+	background-repeat:no-repeat;
 
 	font-family: 'PT-Sans', 'Arial', sans-serif;
 	font-size: 17px;
@@ -507,32 +516,60 @@ main
 
 .popular-brands-list
 {
-	display: inline-flex;
+	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	margin-bottom: 85px;
 	padding-left: 0px;
+	max-width: 940px;
 }
 
-.popular-brands-item
+.popular-brands-item a
 {
+	display: flex;
 	width: 220px;
 	height: 145px;
 	border: 1px solid #eaeaea;
+	margin-top: 20px;
+}
+
+.popular-brands-item img
+{
+	align-self: center;
+	margin: 0 auto;
+	
 }
 
 	/*Слайдер сервисы*/
-.services
+.services-background
 {
-	width: 940px;
+	width: 100%;
 	background-color: #f4f8f9;
 }
+
+.services
+{
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+.services-title
+{
+	display: inline-block;
+	max-width: 398px;
+	margin-top: 68px;
+}
+
 
 .services h2
 {
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 500;
+	margin-top: 0px;
 	text-transform: uppercase;
 }
 
