@@ -45,6 +45,7 @@ a
 .main-header-top-background
 {
 	width: 100%;
+	max-height: 42px;
 	background-color: #293449;
 }
 
@@ -52,9 +53,7 @@ a
 {
 	display:flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: space-between;
-	position: relative;
 	width: 940px;
 	margin: 0 auto;
 	background-color: transparent;
@@ -62,38 +61,44 @@ a
 
 .main-header-logo
 {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 220px;
-	height: 47px;
+	background-color: #ee3643;
+	padding: 12px 54px 9px 55px;
+	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
 }
-#site-search
+
+.search
 {
 	width: 270px;
-	margin-left: 220px;
-	background-color: #293449;
-	border:none;
-
+	margin-top: 12px;
 	font-size: 17px;
 	line-height: 18px;
 	color: #ffffff; /*НЕ РАБОТАЕТ*/
+}
+
+#site-search
+{
+	background-color: #293449;
+	border:none;
 }
 
 .bookmarks,
 .basket
 {
 	width: 150px;
+	margin-top: 12px;
 	font-size: 17px;
 	line-height: 18px;
 }
 
 .button-order-header
 {
-	padding: 12px 22px 12px 20px;
+	width: 150px;
+	height: 30px;
+	padding-top: 12px;
 	background-color: #63a63e;
 	font-size: 17px;
 	line-height: 18px;
+	text-align: center;
 }
 
 .main-header-bottom-background
@@ -102,6 +107,7 @@ a
 	background-color: #f3f7f8;
 	padding-top: 60px;
 	padding-bottom: 60px;
+	margin-bottom: 60px;
 }
 
 .main-header-bottom
@@ -218,16 +224,15 @@ a
 }
 
 	/*Преимущества*/
-.categories-list
+.categories
 {
-	margin-top: 60px;
-	padding-left: 0px; 
+	margin-bottom: 60px;
 }
 
-.categories-list h3
+.categories-list-top h3,
+.categories-list-bottom h3
 {
 	font-size: 24px;
-
 	line-height: 30px;
 	font-weight: 500;
 	font-style: normal;
@@ -235,62 +240,62 @@ a
 	color: #ffffff;
 }
 
-.categories-list a
+.categories-list-top a,
+.categories-list-bottom a
 {
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
 }
 
+.categories-list-top
+{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
 .categories-item-materials
 {
-	display: inline-flex;
-	flex-direction: row;
-	margin-right: 17px;
 	width: 300px;
-		height: 123px; /*временно*/
+	height: 123px; /*временно*/
 	background-color: #ffbf47;
 }
 
 .categories-item-instruments
 {
-	display: inline-flex;
-	flex-direction: row;
-	margin-right: 16px;
 	width: 300px;
-		height: 123px; /*временно*/
+	height: 123px; /*временно*/
 	background-color: #3bbce3;
 }
 
 .categories-item-equipment
 {
-	display: inline-flex;
-	flex-direction: row;
-	margin-bottom: 19px;
 	width: 300px;
-		height: 123px; /*временно*/
+	height: 123px; /*временно*/
 	background-color: #dc91d8;
+}
+
+.categories-list-bottom
+{
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .categories-item-sale
 {
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-left: 640px;
-	margin-bottom: 19px;
-		height: 123px; /*временно*/
+	align-self: flex-end;
+	height: 123px; /*временно*/
 	width: 300px;
 	background-color: #8ed78f;
+	margin-bottom: 20px;
 }
 
 .categories-item-delivery
 {
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-left: 640px;
-	margin-bottom: 53px;
+	align-self: flex-end;
 	width: 300px;
 	height: 123px; /*временно*/
 	background-color: #ffc047;
@@ -301,15 +306,16 @@ a
 {
 	position: absolute;
 	max-width: 620px;
-	top: 548px;
-	width: 620px;
+	max-height: 266px;
+	top: 0px;
+	left: 0px;
 }
 
 .slider-instruments
 {
 	padding-left: 0px;
+	margin: 0 auto;
 }
-
 .slider-instruments span
 {
 	position: absolute;
@@ -367,17 +373,21 @@ a
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	width: 940px;
-	margin-bottom: 21px;
+	width: 886px;
+	margin-bottom: 20px;
+	padding-top: 25px;
+	padding-bottom: 24px;
+	padding-left: 30px;
+	padding-right: 24px;
 	background-color: #f9f5f0;
 }
 
 .popular-goods-background h2
 {
+	margin: 0px 0px;
 	font-size: 30px;
 	line-height: 30px;
 	text-transform: uppercase;
-	margin-left: 30px;
 	color: #32425c;
 }
 
@@ -389,9 +399,6 @@ a
 	text-transform: uppercase;
 	color: #ffffff;
 	padding: 13px 55px 12px 55px;
-	margin-right: 24px;
-	margin-top: 24px;
-	margin-bottom: 25px;
 	border-radius: 3px;
 }
 
@@ -487,15 +494,20 @@ a
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	width: 940px;
+	width: 886px;
+	margin-bottom: 20px;
+	padding-top: 25px;
+	padding-bottom: 24px;
+	padding-left: 30px;
+	padding-right: 24px;
 	background-color: #f9f5f0;
 }
 
 .popular-brands-background h2
 {
+	margin: 0px 0px;
 	font-size: 30px;
 	line-height: 30px;
-	margin-left: 30px;
 	text-transform: uppercase;
 	color: #32425c;
 }
@@ -509,9 +521,7 @@ a
 	color: #ffffff;
 	padding: 13px 70px 13px 69px;
 	border-radius: 3px;
-	margin-right: 24px;
-	margin-top: 24px;
-	margin-bottom: 25px;
+
 }
 
 .popular-brands-list
