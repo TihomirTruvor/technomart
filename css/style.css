@@ -116,6 +116,7 @@ a
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-between;
+
 	position: relative;
 	max-width: 940px;
 	margin: 0 auto;
@@ -188,6 +189,39 @@ a
 	font-size: 21px;
 	line-height: 21px;
 }
+
+.user-nav-initialized
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.user-nav-profile
+{
+	padding: 14px 68px 14px 48px;
+	margin-bottom: 12px;
+	background-color: #ffffff;
+	font-size: 21px;
+	line-height: 21px;
+	color: #000000;
+}
+
+.user-nav-initialized-bottom
+{
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 60px 0px 20px;
+}
+
+.user-nav-orders,
+.user-nav-account
+{
+	font-size: 16px;
+	line-height: 18px;
+	color:#32425c;
+	text-decoration: underline;
+}
+
 
 .main-navigation
 {
@@ -448,7 +482,7 @@ a
 
 .new-price
 {
-	background-image: url(..img/red-button.svg); /*НЕ РАБОТАЕТ!!*/
+	background-image: url(img/red-button.svg); /*НЕ РАБОТАЕТ!!*/
 	background-repeat:no-repeat;
 
 	font-family: 'PT-Sans', 'Arial', sans-serif;
@@ -562,46 +596,78 @@ a
 
 .services
 {
-	position: relative;
 	width: 940px;
 	margin: 0 auto;
+	padding-bottom: 100px;
 }
 
 .services-title
 {
 	display: inline-block;
-	max-width: 398px;
-	margin-top: 68px;
+	max-width: 370px;
+	margin-top: 63px;
+	margin-bottom: 75px;
 }
-
 
 .services h2
 {
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 500;
-	margin-top: 0px;
+	margin: 0px 0px 40px 0px;
 	text-transform: uppercase;
+}
+
+.services-title p
+{
+	margin: 0px 0px 0px 0px;
+}
+
+.slider-services
+{
+	display: flex;
+	flex-direction: column;
+	padding-left: 0px;
+	max-width: 240px;
+	box-shadow: inset 0 5px 3px -1px #293449; /*НЕ ВИДНООО!*/
 }
 
 .slider-services-button
 {
+	display: inline-block;
 	font-size: 21px;
 	line-height: 30px;
 	font-weight: 500;
 	color: #ffffff;
+	padding: 0px 0px;
+	box-shadow: inset 0 1px 3px -1px #293449;
+	border: none;
 	width: 240px;
 	height: 61px;
 	background-color: #32425c;
-	padding-left: 0px; /*?!?!?!?!?*/
-	padding-top: 0px;
 }
 .services span
 {
+	display: block;
 	font-size: 36px;
 	line-height: 36px;
 	text-transform: uppercase;
 	color: #32425c;
+}
+
+.services p
+{
+	display: block;
+	margin: 0px 0px 0px 0px;
+}
+
+.services-description
+{
+	display: block;
+	float: right;
+	max-width: 620px;
+	margin-right: 0px;
+	background-image: url(img/services-img-1.png) /*НЕ ВИДНООООО!!!*/;
 }
 
 .credit a
@@ -655,25 +721,28 @@ a
 }
 .company-description a
 {
+	display: inline-block;
 	background-color: #ee3643;
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
 	color: #ffffff;
 	padding: 14px 40px 12px 41px;
+	margin-top: 40px;
 	border-radius: 3px;
 }
 
 	/*Контакты*/
 .button
 {
+	display: inline-block;
 	background-color: #ee3643;
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
 	color: #ffffff;
-	margin-top: 40px; /*НЕ РАБОТАЕТ!?!?!?!?*/
 	padding: 14px 59px 12px 63px;
+	margin-top: 40px;
 	border-radius: 3px;
 }
 
