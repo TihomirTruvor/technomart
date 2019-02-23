@@ -36,7 +36,7 @@ a
 .popular-goods-list,
 .popular-brands-item,
 .slider-instruments,
-.slider-services
+.services-slider-button
 {
 	list-style: none;
 }
@@ -69,39 +69,133 @@ a
 
 .search
 {
+	display: flex;
 	padding: 0px 0px;
 	font-size: 17px;
 	line-height: 18px;
-	color: #ffffff; /*НЕ РАБОТАЕТ*/
+}
+
+.search-icon
+{
+	width: 48px;
+	border: 0px;
+	padding: 0px;
+	cursor: pointer;
+	background-color: transparent;
+
 }
 
 .site-search
 {
-	width: 270px;
+	min-width: 222px;
 	min-height: 42px;
 	background-color: #293449;
 	border:none;
 }
 
-.bookmarks,
-.basket
+.search-icon:hover,
+.site-search:hover
 {
+	background-color: #212a3a;
+}
+
+.search-icon:focus, /*Кааааак объеденииить!!!!*/
+.search-icon:active,
+.site-search:focus,
+.site-search:active
+{
+	outline: none;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.site-search::-webkit-input-placeholder {color:#ffffff;}
+.site-search::-moz-placeholder          {color:#ffffff;}/* Firefox 19+ */
+.site-search:-moz-placeholder           {color:#ffffff;}/* Firefox 18- */
+.site-search:-ms-input-placeholder      {color:#ffffff;}
+
+.bookmarks
+{
+	position: relative;
+	padding: 13px 27px 11px 43px;
 	display: inline-block;
-	padding: 13px 0px 11px 0px;
-	width: 150px;
+	margin: 0px;
 	font-size: 17px;
 	line-height: 18px;
+}
+
+.basket
+{
+	position: relative;
+	padding: 13px 31px 11px 49px;
+	display: inline-block;
+	margin: 0px;
+	font-size: 17px;
+	line-height: 18px;
+}
+
+.bookmarks::before
+{
+	position: absolute;
+	top: 12px;
+	left: 17px;
+	content: "";
+	width: 14px;
+	height: 18px;
+	background-image: url(../img/icon-bookmark.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	opacity: 0.3;
+}
+
+.basket::before
+{
+	position: absolute;
+	top: 12px;
+	left: 17px;
+	content: "";
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/icon-cart.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	opacity: 0.3;
+}
+
+.bookmarks:hover,
+.bookmarks:hover::before,
+.basket:hover,
+.basket:hover::before
+{
+	background-color: #212a3a;
+	opacity: 1;
+}
+
+.bookmarks:active,
+.basket:active
+{
+	opacity: 0.5;
 }
 
 .button-order-header
 {
 	display: inline-block;
-	width: 150px;
+
 	background-color: #63a63e;
-	padding: 15px 0px 11px 0px;
+	padding: 15px 23px 11px 20px;
 	font-size: 17px;
 	line-height: 18px;
 	text-align: center;
+}
+
+.button-order-header:hover
+{
+background-color: #5fbb2d
+}
+
+.button-order-header:active
+{
+	opacity: 0.5;
 }
 
 .main-header-bottom-background
@@ -272,6 +366,7 @@ a
 .categories-list-top h3,
 .categories-list-bottom h3
 {
+	margin: 0px 0px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 500;
@@ -283,6 +378,12 @@ a
 .categories-list-top a,
 .categories-list-bottom a
 {
+	display: inline-block;
+	width: 95px;
+	padding: 13px 20px;
+	margin-left: 22px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.1);
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
@@ -667,29 +768,31 @@ a
 }
 
 	/*Слайдер сервисы*/
-.services-background
+.services-slider-background
 {
 	width: 100%;
 	background-color: #f4f8f9;
 	margin-bottom: 80px;
 }
 
-.services
+.services-slider
 {
+	position: relative;
 	width: 940px;
 	margin: 0 auto;
-	padding-bottom: 100px;
+	padding-bottom: 264px;
 }
 
-.services-title
+.services-slider-title
 {
 	display: inline-block;
 	max-width: 370px;
 	margin-top: 63px;
+	margin-right: 330px;
 	margin-bottom: 75px;
 }
 
-.services h2
+.services-slider h2
 {
 	font-size: 30px;
 	line-height: 30px;
@@ -698,35 +801,46 @@ a
 	text-transform: uppercase;
 }
 
-.services-title p
+.services-slider-title p
 {
 	margin: 0px 0px 0px 0px;
 }
 
-.slider-services
+.container label
 {
-	display: flex;
-	flex-direction: column;
-	padding-left: 0px;
-	max-width: 240px;
-	box-shadow: inset 0 5px 3px -1px #293449; /*НЕ ВИДНООО!*/
-}
-
-.slider-services-button
-{
-	display: inline-block;
+	position: absolute;
+	margin: 0px 0px;
+	padding: 20px 0px 0px 20px;
+	width: 240px;
+	height: 41px;
+	box-shadow: 0px 1px 0 0 #293449, inset 0px 1px 0 0 #405069;
+	background-color: #32425c;
 	font-size: 21px;
 	line-height: 30px;
-	font-weight: 500;
+	font-weight: bold;
+	text-align: left;
 	color: #ffffff;
-	padding: 0px 0px;
-	box-shadow: inset 0 1px 3px -1px #293449;
-	border: none;
-	width: 240px;
-	height: 61px;
-	background-color: #32425c;
+	cursor: pointer;
 }
-.services span
+
+.warranty-label
+{
+	top: 317px;
+}
+
+.credit-label
+{
+	top: 378px;
+}
+
+.container label:active /*НЕ СОХРяет СОСТОЯНИЕ!!!!*/
+{
+	box-shadow: 0px 1px 0 0 #ffffff, inset 0px 1px 0 0 #ffffff;
+	background-color: #ffffff;
+	color: #32425c;
+}
+
+.services-slider span
 {
 	display: block;
 	font-size: 36px;
@@ -735,19 +849,49 @@ a
 	color: #32425c;
 }
 
-.services p
+.services-slider p
 {
 	display: block;
 	margin: 0px 0px 0px 0px;
 }
 
-.services-description
+.services-slider-list
 {
-	display: block;
 	float: right;
 	max-width: 620px;
-	margin-right: 0px;
+	margin: 0px 0px;
+	padding-left: 0px;
+}
+
+
+.services-slider-item
+{
+	display: none;
+
+}
+
+.services-slider-item:nth-child(1)
+{
+	display: block;
 	background-image: url(../img/services-img-1.png);
+	background-repeat: no-repeat;
+}
+
+.services-slider-item:nth-child(2)
+{
+	background-image: url();
+	background-repeat: no-repeat;
+}
+
+.services-slider-item:nth-child(3)
+{
+	background-image: url();
+	background-repeat: no-repeat;
+}
+
+.delivery:active .services-slider-item:nth-child(1)
+{
+	display: block;
 }
 
 .credit a
@@ -760,6 +904,8 @@ a
 	padding: 12px 45px 12px 45px;
 	border-radius: 3px;
 }
+
+
 
 	/*Описание компании*/
 
