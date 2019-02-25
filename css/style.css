@@ -65,6 +65,7 @@ a
 	padding: 14px 54px 4px 55px;
 	box-shadow: 0px 5px 0 0 #b52933;
 	vertical-align: top;
+	cursor: pointer;
 }
 
 .search
@@ -266,6 +267,20 @@ background-color: #5fbb2d
 	color: #32425c;
 }
 
+.header-contacts-address:hover,
+.header-contacts-address:focus
+{
+	text-decoration: underline;
+	color: #e9292a;
+}
+
+.header-contacts-address:active
+{
+	text-decoration: none;
+	color: #32425c;
+	opacity: 0.3;
+}
+
 .user-nav
 {
 	display: flex;
@@ -275,12 +290,47 @@ background-color: #5fbb2d
 }
 .user-nav-login
 {
+	position: relative;
 	background-color: #ffffff;
 	padding: 10px 24px 13px 49px;
 	color: #000000;
 	font-size: 21px;
 	line-height: 21px;
 	margin-right: 10px;
+}
+
+.user-nav-login::before   /*Почему не отображается!!!*/ 
+{
+	position: absolute;
+	top: 12px;
+	left: 16px;
+	content: "";
+	width: 20px;
+	height: 17px;
+	background-image: url(../img/icon-login.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	opacity: 0.3;
+}
+
+.user-nav-login:hover,
+.user-nav-registration:hover,
+.user-nav-login:focus,
+.user-nav-registration:focus
+{
+	color: #e9292a;
+}
+
+.user-nav-login:hover::before
+{
+	opacity: 1;
+}
+
+.user-nav-login:active,
+.user-nav-registration:active
+{
+	opacity: 0.5;
+	color: #000000;
 }
 
 .user-nav-registration
@@ -330,7 +380,7 @@ background-color: #5fbb2d
 	width: 940px;
 	margin: 0 auto;
 	box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
-	background-color: #293449;
+	background-color: #32425c;
 }
 
 .main-navigation-list
@@ -339,15 +389,38 @@ background-color: #5fbb2d
 	flex-direction: row;
 	justify-content: space-between;
 	margin: 0 auto;
-	padding: 0px 24px 0px 22px;
+	padding: 21px 0px 22px 0px;
 	background-color: transparent;
 	font-size: 17px;
 	line-height: 17px;
 }
 
-.main-navigation-list li
+.main-navigation-list a:not(.header-item):not(.contacts-item)
 {
 	padding: 21px 30px 21px 30px;
+}
+
+.header-item
+{
+	padding: 21px 30px 21px 51px;
+}
+
+.contacts-item
+{
+	padding: 21px 56px 21px 30px;
+}
+
+.main-navigation-list a:hover,
+.main-navigation-list a:focus
+{
+	background-color:rgba(0,0,0,0.3);
+}
+
+.main-navigation-list a:active,
+.main-navigation-list a:active
+{
+	background-color:rgba(0,0,0,0.3);
+	opacity: 0.6;
 }
 
 /*Мейн*/
@@ -366,7 +439,7 @@ background-color: #5fbb2d
 .categories-list-top h3,
 .categories-list-bottom h3
 {
-	margin: 0px 0px;
+	margin: 19px 0px 12px 23px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 500;
@@ -380,13 +453,14 @@ background-color: #5fbb2d
 {
 	display: inline-block;
 	width: 95px;
-	padding: 13px 20px;
-	margin-left: 22px;
+	padding: 12px 20px;
+	margin-left: 24px;
 	border-radius: 3px;
 	background-color: rgba(0, 0, 0, 0.1);
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 .categories-list-top
@@ -399,23 +473,35 @@ background-color: #5fbb2d
 
 .categories-item-materials
 {
+	position: relative;
 	width: 300px;
-	height: 123px; /*временно*/
+	padding-bottom: 20px;
 	background-color: #ffbf47;
+	background-image: url(../img/icon-materials.svg);
+	background-repeat: no-repeat;
+	background-position: 212px 30px;
 }
+
 
 .categories-item-instruments
 {
+	position: relative;
 	width: 300px;
-	height: 123px; /*временно*/
 	background-color: #3bbce3;
+	background-image: url(../img/icon-instruments.svg);
+	background-repeat: no-repeat;
+	background-position: 196px 32px;
+
 }
 
 .categories-item-equipment
 {
+	position: relative;
 	width: 300px;
-	height: 123px; /*временно*/
 	background-color: #dc91d8;
+	background-image: url(../img/icon-equipment.svg);
+	background-repeat: no-repeat;
+	background-position: 190px 29px;
 }
 
 .categories-list-bottom
@@ -427,19 +513,27 @@ background-color: #5fbb2d
 
 .categories-item-sale
 {
+	position: relative;
 	align-self: flex-end;
-	height: 123px; /*временно*/
 	width: 300px;
+	padding-bottom: 20px;
 	background-color: #8ed78f;
 	margin-bottom: 20px;
+	background-image: url(../img/icon-sale.svg);
+	background-repeat: no-repeat;
+	background-position: 195px 26px;
 }
 
 .categories-item-delivery
 {
+	position: relative;
 	align-self: flex-end;
 	width: 300px;
-	height: 123px; /*временно*/
+	padding-bottom: 20px;
 	background-color: #ffc047;
+	background-image: url(../img/icon-delivery.svg);
+	background-repeat: no-repeat;
+	background-position: 190px 33px;
 }
 
 	/*Слайдер инструменты*/
