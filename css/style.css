@@ -512,7 +512,6 @@ background-color: #5fbb2d
 	background-position: 212px 30px;
 }
 
-
 .categories-item-instruments
 {
 	position: relative;
@@ -521,7 +520,6 @@ background-color: #5fbb2d
 	background-image: url(../img/icon-instruments.svg);
 	background-repeat: no-repeat;
 	background-position: 196px 32px;
-
 }
 
 .categories-item-equipment
@@ -758,6 +756,12 @@ background-color: #5fbb2d
 	border: 1px solid #ccc;
 }
 
+.catalog-item:hover,
+.catalog-item:focus
+{
+box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
 .catalog-item img
 {
 	max-width: 100%
@@ -988,12 +992,13 @@ background-color: #5fbb2d
 .popular-brands-item a:hover,
 .popular-brands-item a:focus
 {
-	opacity: 0.5;
+box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .popular-brands-item a:active
 {
-	opacity: 0.3;
+	opacity: 0.5;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .popular-brands-item img
