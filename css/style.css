@@ -36,6 +36,7 @@ a
 .popular-brands-item,
 .slider-instruments,
 .services-slider-button
+.breadcrumbs
 {
 	list-style: none;
 }
@@ -679,7 +680,6 @@ background-color: #5fbb2d
 }
 
 	/*Популярные товары*/
-
 .popular-goods .container
 {
 	display: flex;
@@ -772,10 +772,71 @@ background-color: #5fbb2d
 .breadcrumbs
 {
 	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 	width: 940px;
 	margin: 0 auto;
+	padding: 0;
+	margin-top: -37px;
+	margin-bottom: 23px;
+	font-size: 13px;
+	line-height: 18px;
+	color: #000000;
+	text-transform: uppercase;
 }
 
+.breadcrumbs li
+{
+	position: relative;
+	padding-right: 40px;
+	list-style: none;
+}
+
+.breadcrumbs li:first-child
+{
+	width: 14px;
+	background-color: transparent;
+}
+
+.breadcrumbs-home::before
+{
+	content: "";
+	position: absolute;
+	background-image: url(../img/icon-home.svg);
+	width: 14px;
+	height: 12px;
+	top: 2px;
+	left: 0px;
+}
+
+.breadcrumbs li::after
+{
+	content: "";
+	position: absolute;
+	background-image: url(../img/icon-right.svg);
+	width: 8px;
+	height: 12px;
+	top: 2px;
+	right: 17px;
+}
+
+.breadcrumbs li:last-child
+{
+	padding-right: 0;
+}
+
+.breadcrumbs-current::after
+{
+	display: none;
+}
+
+.breadcrumbs a
+{
+	font-size: 13px;
+	line-height: 18px;
+	color: #000000;
+	text-transform: uppercase;
+}
 .catalog-title
 {
 	display: flex;
@@ -1098,8 +1159,6 @@ background-color: #5fbb2d
 	text-align: center;
 }
 
-
-
 	/*Популярные производители*/
 .popular-brands .container
 {
@@ -1327,7 +1386,6 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 	/*Описание компании*/
-
 .main-bottom
 {
 	display: flex;
