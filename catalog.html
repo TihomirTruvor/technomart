@@ -68,8 +68,9 @@
 				</li>
 				<li class="breadcrumbs-current">Перфораторы</li>
 			</ul>
-			<h1 class="catalog-title">Перфораторы</h1>
-
+			<div class="catalog-title">
+			<h1>Перфораторы</h1>
+			</div>
 					<!--Здесь будет правая часть фильтрации-->
 				<div class="catalog-container">
 					<form class="filter" method="get" action="https://echo.htmlacademy.ru">
@@ -94,49 +95,42 @@
 								</div>
 						</div>
 
-						<fieldset>
+						<fieldset class="first">
 							<legend>Производители:</legend>
 							<ul>
 								<li class="filter-option">
-									<label>
-										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Bosh">Bosh
-									</label>
+										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Bosh" id="Bosh">
+										<label for="Bosh">Bosh</label>
 								</li>
 								<li class="filter-option">
-									<label>
-										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Интерскол">Интерскол
-									</label>
+										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="Интерскол" name="Интерскол">
+									<label for="Интерскол">Интерскол</label>
 								</li>
 								<li class="filter-option">
-									<label>
-										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Makita">Makita
-									</label>
+										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="Makita" name="Makita">
+									<label for="Makita">Makita</label>
 								</li>
 								<li class="filter-option">
-									<label>
-										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Dewalt">Dewalt
-									</label>
+										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="Dewalt" name="Dewalt">
+									<label for="Dewalt">Dewalt</label>
 								</li>
 								<li class="filter-option">
-									<label>
-										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="Hitachi">Hitachi
-									</label>
+										<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="Hitachi" name="Hitachi">
+									<label for="Hitachi">Hitachi</label>
 								</li>
 							</ul>
 						</fieldset>
 
-						<fieldset>
-							<legend>Питание:</legend>
+						<fieldset class="second">
+							<legend class="filter-power">Питание:</legend>
 							<ul>
-									<li>
-										<label>
-											<input class="visually-hidden filter-input filter-input-radio" type="radio" name="power">Акумуляторные
-										</label>
+									<li class="filter-option">
+											<input class="visually-hidden filter-input filter-input-radio" type="radio" id="battery" name="power">
+										<label for="battery">Акумуляторные</label>
 									</li>
-									<li>
-										<label>
-											<input class="visually-hidden filter-input filter-input-radio" type="radio" name="power">Сетевые
-										</label>
+									<li class="filter-option">
+											<input class="visually-hidden filter-input filter-input-radio" type="radio" id="networked" name="power">
+										<label for="networked">Сетевые</label>
 									</li>
 							</ul>
 						</fieldset>
