@@ -5,7 +5,8 @@ const goods = [ // объект состоящий из списка свойс�
     { title: 'Перфоратор BOSH BFG 2000', price: 6000, oldPrice: 8000, img:'img/perforator-1.jpg' },
     ];
 
-const renderGoodsItem = (title = 'Товар', price = 'Неизвестно', oldPrice = 'Неизвестно', img = 'Здесь должна быть картинка товара') => {  // функция рендера превью товара с дефолтными аргументами
+const renderGoodsItem = ({title = 'Товар', price = 'Неизвестно', oldPrice = 'Неизвестно', img = 'Здесь должна быть картинка товара'}) => {  /* функция 
+рендера превью товара с дефолтными аргументами и деструктуризацией*/
     return `<li class="index-catalog-item">
                     <img src="${img}" width="220" height="170" alt=" ">
                     <h3 class="catalog-item-name">${title}</h3>
@@ -18,8 +19,8 @@ const renderGoodsItem = (title = 'Товар', price = 'Неизвестно', o
             </li>`;
 };
 
-const renderGoodsList = (list = []) => {
-    let goodsList = list.map(({title, price, oldPrice, img}) => renderGoodsItem(title, price, oldPrice, img)); /* выполнили метод map передав 
+const renderGoodsList = (list) => {
+    let goodsList = list.map((item) => renderGoodsItem(item)); /* выполнили метод map передав 
     значения из массива goods*/
     document.querySelector('.popular-goods-list').innerHTML = goodsList.join(''); /* подставляем в класс .popular-goods-list сформированный массив goodsList
       и склеиваем эменты массива в строку с помощью метода .join*/
