@@ -29,15 +29,16 @@ class GoodsItem { // создали класс для превью товара
 
 class GoodsList { // создали класс для списка товаров
     goods = [];
-    summ = 0; // Переменная для хранения суммы
+    
 
     fetchGoods() { // метод для приёма свойств
         this.goods = goods;
     };
 
     calculateSum () { // Метод для суммы товаров
-        const sumPrice = this.goods;
-        this.goods.forEach(elem => this.summ += elem.price); 
+        return this.goods.reduce((prev, {price}) => {
+            return prev + price;
+        }, 0)
     };
 
     render() { // Метод рендера списка товаров
@@ -53,6 +54,6 @@ class GoodsList { // создали класс для списка товаро�
 const goodsList = new GoodsList(); // Создали объект goodsList
 goodsList.fetchGoods(); // Вызов метода
 goodsList.render(); // Вызов метода рендера
-goodsList.calculateSum(); 
+const res = goodsList.calculateSum(); 
 
     
