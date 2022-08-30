@@ -5,6 +5,19 @@ const goods = [ // объект состоящий из списка свойс�
     { title: 'Перфоратор BOSH BFG 2000', price: 6000, oldPrice: 8000, imgs:'img/perforator-1.jpg' }
     ];
 
+const baseURL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const goodsURL = '/catalogData.json'
+
+function service(url, Callback) { // функция для обращения на сервер
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    const loadHendler = () => {
+        Callback(JSON.parse(xhr.response));
+    }
+    xhr.onload = loadHendler;
+    xhr.send();
+}
+
 class GoodsItem { // создали класс для превью товара
     constructor ({imgs = 'Здесь должна быть картинка товара', title = 'Товар', price = 'Неизвестно', oldPrice = 'Неизвестно' }) {
         this.imgs = imgs;
@@ -31,14 +44,11 @@ class GoodsList { // создали класс для списка товаро�
     goods = [];
     
 
-    fetchGoods() { // метод для приёма свойств
-        this.goods = goods;
-    };
-
-    calculateSum () { // Метод для суммы товаров
-        return this.goods.reduce((prev, {price}) => {
-            return prev + price;
-        }, 0)
+    fetchGoods(Callback) { // метод для приёма свойств
+        service(`${baseURL}${goodsURL}`, (data) => {
+            this.goods = data;
+            Callback();
+        })
     };
 
     render() { // Метод рендера списка товаров
@@ -49,11 +59,19 @@ class GoodsList { // создали класс для списка товаро�
         document.querySelector('.popular-goods-list').innerHTML = goodsList.join('');
     }
 
+    calculateSum () { // Метод для суммы товаров
+        return this.goods.reduce((prev, {price}) => {
+            return prev + price;
+        }, 0)
+    };
+
 };
 
 const goodsList = new GoodsList(); // Создали объект goodsList
-goodsList.fetchGoods(); // Вызов метода
-goodsList.render(); // Вызов метода рендера
+goodsList.fetchGoods(() => {
+    goodsList.render(); // Вызов метода рендера
+}); // Вызов метода
+
 const res = goodsList.calculateSum(); 
 
     
