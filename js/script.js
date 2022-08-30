@@ -5,18 +5,22 @@ const goods = [ // объект состоящий из списка свойс�
     { title: 'Перфоратор BOSH BFG 2000', price: 6000, oldPrice: 8000, imgs:'img/perforator-1.jpg' }
     ];
 
-const baseURL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
-const goodsURL = '/catalogData.json'
+const baseURL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json';
+//const goodsURL = '/catalogData.json';
 
-function service(url, Callback) { // функция для обращения на сервер
+const service = (url) => new Promise ((resolve) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     const loadHendler = () => {
-        Callback(JSON.parse(xhr.response));
+        resolve(JSON.parse(xhr.response));
     }
     xhr.onload = loadHendler;
     xhr.send();
-}
+})
+
+service().then((data) => {
+
+})
 
 class GoodsItem { // создали класс для превью товара
     constructor ({imgs = 'Здесь должна быть картинка товара', title = 'Товар', price = 'Неизвестно', oldPrice = 'Неизвестно' }) {
@@ -44,10 +48,10 @@ class GoodsList { // создали класс для списка товаро�
     goods = [];
     
 
-    fetchGoods(Callback) { // метод для приёма свойств
-        service(`${baseURL}${goodsURL}`, (data) => {
+    fetchGoods() { // метод для приёма c сервера
+
+        return service(baseURL).then((data) => {
             this.goods = data;
-            Callback();
         })
     };
 
@@ -68,10 +72,11 @@ class GoodsList { // создали класс для списка товаро�
 };
 
 const goodsList = new GoodsList(); // Создали объект goodsList
-goodsList.fetchGoods(() => {
+
+goodsList.fetchGoods().then(() => {
     goodsList.render(); // Вызов метода рендера
 }); // Вызов метода
 
-const res = goodsList.calculateSum(); 
+const res = goodsList.calculateSum(); // Вызов функции суммы
 
     
