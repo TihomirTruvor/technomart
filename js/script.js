@@ -1,14 +1,19 @@
-const goods = [ // объект состоящий из списка свойств товаров
+/*const goods = [ // объект состоящий из списка свойств товаров
     { title: 'Перфоратор BOSH BFG 9000', price: 15000, oldPrice: 17000, imgs:'img/perforator-4.jpg' },
     { title: 'Перфоратор BOSH BFG 6000', price: 11000, oldPrice: 13000, imgs:'img/perforator-1.jpg' },
     { title: 'Перфоратор BOSH BFG 3000', price: 8000, oldPrice: 10000, imgs:'img/perforator-2.jpg' },
     { title: 'Перфоратор BOSH BFG 2000', price: 6000, oldPrice: 8000, imgs:'img/perforator-1.jpg' }
-    ];
+    ];*/
 
 const baseURL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json';
 //const goodsURL = '/catalogData.json';
 
-const service = (url) => new Promise ((resolve) => {
+const service = (URL) => fetch(URL)
+    .then((res) => {
+        return res.json()
+    })
+
+/*const service = (url) => new Promise ((resolve) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     const loadHendler = () => {
@@ -16,11 +21,11 @@ const service = (url) => new Promise ((resolve) => {
     }
     xhr.onload = loadHendler;
     xhr.send();
-})
+})*/
 
-service().then((data) => {
+/*service().then((data) => {
 
-})
+})*/
 
 class GoodsItem { // создали класс для превью товара
     constructor ({imgs = 'Здесь должна быть картинка товара', title = 'Товар', price = 'Неизвестно', oldPrice = 'Неизвестно' }) {
